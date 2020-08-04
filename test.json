@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "author": "kate bazleva",
+    "content": "Something very interesting",
+    "created": "Jul 20, 2020, 9:35:00 AM",
+    "likesCount": 1,
+    "commentsCount": 0,
+    "shareCount": 2,
+    "likedByMe": true,
+    "commentedByMe": false,
+    "sharedByMe": true,
+    "postType": "SIMPLE_POST",
+    "isHidden": false
+  },
+  {
+    "id": 2,
+    "author": "bzzzz",
+    "content": "Bzz-zzzz",
+    "created": "Jul 20, 2020, 9:35:00 AM",
+    "likesCount": 10,
+    "commentsCount": 0,
+    "shareCount": 0,
+    "likedByMe": false,
+    "commentedByMe": false,
+    "sharedByMe": false,
+    "video": {
+      "url": "https://www.youtube.com/watch?v\u003dG-7U-FDql1A"
+    },
+    "postType": "VIDEO_POST",
+    "isHidden": false
+  },
+  {
+    "id": 3,
+    "author": "mikki",
+    "content": "Third post!",
+    "created": "Jul 20, 2020, 9:35:00 AM",
+    "likesCount": 0,
+    "commentsCount": 3,
+    "shareCount": 2,
+    "likedByMe": false,
+    "commentedByMe": true,
+    "sharedByMe": false,
+    "address": "Moscow State University",
+    "location": {
+      "lat": 55.702893,
+      "lng": 37.530829
+    },
+    "postType": "EVENT_POST",
+    "isHidden": false
+  },
+  {
+    "id": 4,
+    "author": "mouse",
+    "content": "QWERTYUIOP[ASDFGHJKL;zxcvbnm,dhfkjehrfvcljbdnvcli ubaeowhlvbkjfzds;oifeh;oigbvavubeb;vb zjk",
+    "created": "Jul 20, 2020, 9:35:00 AM",
+    "likesCount": 5,
+    "commentsCount": 0,
+    "shareCount": 2,
+    "likedByMe": true,
+    "commentedByMe": false,
+    "sharedByMe": false,
+    "postType": "SIMPLE_POST",
+    "isHidden": false
+  },
+  {
+    "id": 5,
+    "author": "mur",
+    "content": "meow :3",
+    "created": "Jul 20, 2020, 9:35:00 AM",
+    "likesCount": 100,
+    "commentsCount": 3,
+    "shareCount": 2,
+    "likedByMe": true,
+    "commentedByMe": false,
+    "sharedByMe": true,
+    "advertising": {
+      "imageUrl": "https://promokody-tmall.ru/wp-content/uploads/2020/03/netology-e1585655654780.png",
+      "adsUrl": "https://netology.ru/programs/kotlindevelopment/"
+    },
+    "postType": "ADVERTISING",
+    "isHidden": false
+  },
+  {
+    "id": 6,
+    "author": "mur-mur-mur",
+    "content": "meow!!!",
+    "created": "Jul 31, 2020, 3:01:00 PM",
+    "likesCount": 2,
+    "commentsCount": 0,
+    "shareCount": 0,
+    "likedByMe": true,
+    "commentedByMe": false,
+    "sharedByMe": true,
+    "source": {
+      "id": 5,
+      "author": "mur",
+      "content": "meow :3",
+      "created": "Jul 20, 2020, 9:35:00 AM",
+      "likesCount": 100,
+      "commentsCount": 3,
+      "shareCount": 2,
+      "likedByMe": true,
+      "commentedByMe": false,
+      "sharedByMe": true,
+      "advertising": {
+        "imageUrl": "https://promokody-tmall.ru/wp-content/uploads/2020/03/netology-e1585655654780.png",
+        "adsUrl": "https://netology.ru/programs/kotlindevelopment/"
+      },
+      "postType": "ADVERTISING",
+      "isHidden": false
+    },
+    "postType": "REPOST",
+    "isHidden": false
+  }
+]
