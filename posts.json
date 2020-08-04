@@ -102,7 +102,7 @@
       "shareCount": 2,
       "likedByMe": true,
       "commentedByMe": false,
-      "sharedByMe": true,
+      "sharedByMe": false,
       "advertising": {
         "imageUrl": "https://promokody-tmall.ru/wp-content/uploads/2020/03/netology-e1585655654780.png",
         "adsUrl": "https://netology.ru/programs/kotlindevelopment/"

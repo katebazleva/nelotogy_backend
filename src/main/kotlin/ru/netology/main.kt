@@ -79,7 +79,7 @@ fun main() {
                     commentsCount = 0,
                     shareCount = 0,
                     likedByMe = true,
-                    sharedByMe = true,
+                    sharedByMe = false,
                     source = postsList[4],
                     postType = PostType.REPOST
             )
