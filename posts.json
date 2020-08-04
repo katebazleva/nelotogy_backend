@@ -91,7 +91,7 @@
     "shareCount": 0,
     "likedByMe": true,
     "commentedByMe": false,
-    "sharedByMe": true,
+    "sharedByMe": false,
     "source": {
       "id": 5,
       "author": "mur",
@@ -102,7 +102,7 @@
       "shareCount": 2,
       "likedByMe": true,
       "commentedByMe": false,
-      "sharedByMe": false,
+      "sharedByMe": true,
       "advertising": {
         "imageUrl": "https://promokody-tmall.ru/wp-content/uploads/2020/03/netology-e1585655654780.png",
         "adsUrl": "https://netology.ru/programs/kotlindevelopment/"
