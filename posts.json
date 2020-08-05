@@ -64,24 +64,6 @@
     "isHidden": false
   },
   {
-    "id": 5,
-    "author": "mur",
-    "content": "meow :3",
-    "created": "Jul 20, 2020, 9:35:00 AM",
-    "likesCount": 100,
-    "commentsCount": 3,
-    "shareCount": 2,
-    "likedByMe": true,
-    "commentedByMe": false,
-    "sharedByMe": true,
-    "advertising": {
-      "imageUrl": "https://promokody-tmall.ru/wp-content/uploads/2020/03/netology-e1585655654780.png",
-      "adsUrl": "https://netology.ru/programs/kotlindevelopment/"
-    },
-    "postType": "ADVERTISING",
-    "isHidden": false
-  },
-  {
     "id": 6,
     "author": "mur-mur-mur",
     "content": "meow!!!",
