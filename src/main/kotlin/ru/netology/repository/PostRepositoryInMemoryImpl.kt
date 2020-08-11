@@ -1,12 +1,6 @@
 package ru.netology.repository
 
-import com.google.gson.Gson
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.launch
 import ru.netology.model.PostModel
-import java.io.File
-import kotlin.coroutines.EmptyCoroutineContext
 
 class PostRepositoryInMemoryImpl : PostRepository {
     private var nextId = 1
@@ -43,9 +37,8 @@ class PostRepositoryInMemoryImpl : PostRepository {
             -1 -> null
             else -> {
                 val item = items[index]
-                val copy = item.copy(likesCount = item.likesCount++)
-                items[index] = copy
-                copy
+                item.likesCount++
+                item
             }
         }
     }
@@ -55,26 +48,9 @@ class PostRepositoryInMemoryImpl : PostRepository {
             -1 -> null
             else -> {
                 val item = items[index]
-                val copy = item.copy(likesCount = item.likesCount--)
-                items[index] = copy
-                copy
+                if (item.likesCount > 0) item.likesCount--
+                item
             }
         }
-    }
-}
-
-fun main() {
-    val repositoryInMemory = PostRepositoryInMemoryImpl()
-
-    val scope = CoroutineScope(EmptyCoroutineContext + SupervisorJob())
-
-    repeat(10) {
-        scope.launch {
-            repositoryInMemory.save(PostModel(id = it, author = "Test"))
-        }
-    }
-
-    scope.launch {
-        println(Gson().toJson(repositoryInMemory.getAll()))
     }
 }
