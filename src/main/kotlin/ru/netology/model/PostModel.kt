@@ -1,12 +1,12 @@
-package ru.netology.data
+package ru.netology.model
 
 import java.util.*
 
-class Post(
+data class PostModel(
     val id: Int,
     val author: String,
-    val content: String,
-    val created: Date,
+    val content: String = "",
+    val created: Date = Date(),
     var likesCount: Int = 0,
     var commentsCount: Int = 0,
     var shareCount: Int = 0,
@@ -17,7 +17,7 @@ class Post(
     val location: Location? = null,
     val video: Video? = null,
     val advertising: Advertising? = null,
-    val source: Post? = null,
+    val source: PostModel? = null,
     val postType: PostType = PostType.SIMPLE_POST,
     var isHidden: Boolean = false
 ) {

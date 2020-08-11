@@ -1,4 +1,4 @@
-package ru.netology.data
+package ru.netology.model
 
 enum class PostType {
     SIMPLE_POST, EVENT_POST, VIDEO_POST, REPOST, ADVERTISING

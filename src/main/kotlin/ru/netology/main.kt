@@ -1,7 +1,7 @@
 package ru.netology
 
 import com.google.gson.Gson
-import ru.netology.data.*
+import ru.netology.model.*
 import java.util.*
 
 fun main() {
@@ -10,7 +10,7 @@ fun main() {
     createdTime.set(2020, Calendar.JULY, 20, 9, 35, 0)
 
     val postsList = mutableListOf(
-            Post(
+            PostModel(
                     1,
                     "kate bazleva",
                     "Something very interesting",
@@ -20,7 +20,7 @@ fun main() {
                     likedByMe = true,
                     sharedByMe = true
             ),
-            Post(
+            PostModel(
                     2,
                     "bzzzz",
                     "Bzz-zzzz",
@@ -29,7 +29,7 @@ fun main() {
                     video = Video("https://www.youtube.com/watch?v=G-7U-FDql1A"),
                     postType = PostType.VIDEO_POST
             ),
-            Post(
+            PostModel(
                     3,
                     "mikki",
                     "Third post!",
@@ -41,7 +41,7 @@ fun main() {
                     location = 55.702893 x 37.530829,
                     postType = PostType.EVENT_POST
             ),
-            Post(
+            PostModel(
                     4,
                     "mouse",
                     "QWERTYUIOP[ASDFGHJKL;zxcvbnm,dhfkjehrfvcljbdnvcli ubaeowhlvbkjfzds;oifeh;oigbvavubeb;vb zjk",
@@ -50,7 +50,7 @@ fun main() {
                     shareCount = 2,
                     likedByMe = true
             ),
-            Post(
+            PostModel(
                     5,
                     "mur",
                     "meow :3",
@@ -70,7 +70,7 @@ fun main() {
 
     createdTime.set(2020, Calendar.JULY, 31, 15, 1, 0)
     postsList.add(
-            Post(
+            PostModel(
                     6,
                     "mur-mur-mur",
                     "meow!!!",

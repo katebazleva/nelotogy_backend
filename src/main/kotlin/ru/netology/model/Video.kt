@@ -1,3 +1,3 @@
-package ru.netology.data
+package ru.netology.model
 
 class Video(val url: String)

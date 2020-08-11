@@ -1,4 +1,4 @@
-package ru.netology.data
+package ru.netology.model
 
 class Location(var lat: Double, var lng: Double)
 
