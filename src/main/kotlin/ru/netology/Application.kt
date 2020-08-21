@@ -12,6 +12,8 @@ import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
 import org.kodein.di.ktor.KodeinFeature
 import ru.netology.model.PostModel
+import ru.netology.model.PostType
+import ru.netology.model.Video
 import ru.netology.repository.PostRepository
 import ru.netology.repository.PostRepositoryInMemoryImpl
 import ru.netology.route.v1
@@ -44,7 +46,16 @@ fun Application.module(testing: Boolean = false) {
         bind<PostRepository>() with singleton {
             PostRepositoryInMemoryImpl().apply {
                 runBlocking {
-                    save(PostModel(0, "author", "test", Date()))
+                    save(
+                        PostModel(
+                            0,
+                            "author",
+                            "test",
+                            Date(),
+                            postType = PostType.VIDEO_POST,
+                            video = Video("https://www.youtube.com/watch?v=1blMRvalEQY")
+                        )
+                    )
                 }
             }
         }
