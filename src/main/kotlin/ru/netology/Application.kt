@@ -1,14 +1,12 @@
 package ru.netology
 
 import io.ktor.application.*
-import io.ktor.features.ContentNegotiation
-import io.ktor.features.NotFoundException
-import io.ktor.features.ParameterConversionException
-import io.ktor.features.StatusPages
-import io.ktor.routing.Routing
-import io.ktor.gson.gson
-import io.ktor.http.HttpStatusCode
-import io.ktor.response.respond
+import io.ktor.features.*
+import io.ktor.gson.*
+import io.ktor.http.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.netty.*
 import kotlinx.coroutines.runBlocking
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
@@ -19,10 +17,8 @@ import ru.netology.repository.PostRepositoryInMemoryImpl
 import ru.netology.route.v1
 import java.util.*
 
-fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main(args: Array<String>): Unit = EngineMain.main(args)
 
-@Suppress("unused") // Referenced in application.conf
-@kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
 
     install(Routing) {
