@@ -8,19 +8,20 @@ data class PostResponseDto(
     val author: String,
     val content: String,
     val created: Date,
-    var likesCount: Int = 0,
+    var likesCount: Int,
     var commentsCount: Int = 0,
     var shareCount: Int = 0,
-    var likedByMe: Boolean = false,
+    var likedByMe: Boolean,
     var commentedByMe: Boolean = false,
     var sharedByMe: Boolean = false,
-    val address: String? = null,
-    val location: Location? = null,
-    val video: Video? = null,
-    val advertising: Advertising? = null,
+    val address: String?,
+    val location: Location?,
+    val video: Video?,
+    val advertising: Advertising?,
     val source: PostModel? = null,
-    val postType: PostType = PostType.SIMPLE_POST,
-    var isHidden: Boolean = false
+    val postType: PostType,
+    var isHidden: Boolean = false,
+    var timesShown: Long
 ) {
     companion object {
         fun fromModel(model: PostModel) = PostResponseDto(
@@ -34,7 +35,8 @@ data class PostResponseDto(
             location = model.location,
             video = model.video,
             advertising = model.advertising,
-            postType = model.postType
+            postType = model.postType,
+            timesShown = model.timesShown
         )
     }
 }

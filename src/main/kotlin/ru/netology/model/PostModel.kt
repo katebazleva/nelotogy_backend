@@ -19,6 +19,7 @@ data class PostModel(
     val advertising: Advertising? = null,
     val source: PostModel? = null,
     val postType: PostType = PostType.SIMPLE_POST,
-    var isHidden: Boolean = false
+    var isHidden: Boolean = false,
+    var timesShown: Long = 0
 ) {
 }

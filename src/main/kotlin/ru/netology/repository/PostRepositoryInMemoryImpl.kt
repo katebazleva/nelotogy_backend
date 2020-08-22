@@ -7,11 +7,12 @@ class PostRepositoryInMemoryImpl : PostRepository {
     private val items = mutableListOf<PostModel>()
 
     override suspend fun getAll(): List<PostModel> {
+        items.forEach { it.timesShown++ }
         return items.reversed()
     }
 
     override suspend fun getById(id: Int): PostModel? {
-        return items.find { it.id == id }
+        return items.find { it.id == id }?.also { it.timesShown++ }
     }
 
     override suspend fun save(item: PostModel): PostModel {
