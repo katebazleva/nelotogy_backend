@@ -30,6 +30,10 @@ data class PostResponseDto(
             created = model.created,
             likesCount = model.likesCount,
             likedByMe = model.likedByMe,
+            address = model.address,
+            location = model.location,
+            video = model.video,
+            advertising = model.advertising,
             postType = model.postType
         )
     }

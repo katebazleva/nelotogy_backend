@@ -19,7 +19,9 @@ import ru.netology.repository.PostRepositoryInMemoryImpl
 import ru.netology.route.v1
 import java.util.*
 
-fun main(args: Array<String>): Unit = EngineMain.main(args)
+fun main(args: Array<String>) {
+    EngineMain.main(args)
+}
 
 fun Application.module(testing: Boolean = false) {
 

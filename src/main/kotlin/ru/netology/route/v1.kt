@@ -1,17 +1,16 @@
 package ru.netology.route
 
-import io.ktor.application.call
-import io.ktor.features.NotFoundException
-import io.ktor.features.ParameterConversionException
-import io.ktor.http.ContentType
-import io.ktor.http.HttpStatusCode
-import io.ktor.request.receive
-import io.ktor.response.respond
-import io.ktor.response.respondText
+import io.ktor.application.*
+import io.ktor.features.*
+import io.ktor.http.*
+import io.ktor.request.*
+import io.ktor.response.*
 import io.ktor.routing.*
 import org.kodein.di.generic.instance
 import org.kodein.di.ktor.kodein
-import ru.netology.dto.*
+import ru.netology.dto.PostRequestDto
+import ru.netology.dto.PostResponseDto
+import ru.netology.dto.RepostRequestDto
 import ru.netology.model.PostModel
 import ru.netology.model.PostType
 import ru.netology.repository.PostRepository
@@ -64,13 +63,9 @@ fun Routing.v1() {
                 post.author,
                 post.content,
                 address = post.address,
-                location = post.location?.let {
-                    getLocationFromString(it)
-                },
-                video = post.video?.let {
-                    getVideoFromString(it)
-                },
-                postType = getPostTypeFromString(post.postType)
+                location = post.location,
+                video = post.video,
+                postType = post.postType ?: PostType.SIMPLE_POST
             )
             val newPost = repo.save(model)
             val response = PostResponseDto.fromModel(newPost)
@@ -92,6 +87,7 @@ fun Routing.v1() {
                 post.id,
                 post.author,
                 post.content,
+                post.created,
                 source = originalPost,
                 postType = PostType.REPOST
             )
