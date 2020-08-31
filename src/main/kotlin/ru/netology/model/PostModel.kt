@@ -1,12 +1,12 @@
 package ru.netology.model
 
-import java.util.*
+import java.time.LocalDateTime
 
 data class PostModel(
     val id: Int,
     val author: String,
     val content: String = "",
-    val created: Date = Date(),
+    val created: LocalDateTime = LocalDateTime.now(),
     var likesCount: Int = 0,
     var commentsCount: Int = 0,
     var shareCount: Int = 0,

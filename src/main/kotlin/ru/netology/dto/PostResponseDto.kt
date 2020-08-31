@@ -1,13 +1,13 @@
 package ru.netology.dto
 
 import ru.netology.model.*
-import java.util.*
+import java.time.LocalDateTime
 
 data class PostResponseDto(
     val id: Int,
     val author: String,
     val content: String,
-    val created: Date,
+    val created: LocalDateTime,
     var likesCount: Int,
     var commentsCount: Int = 0,
     var shareCount: Int = 0,

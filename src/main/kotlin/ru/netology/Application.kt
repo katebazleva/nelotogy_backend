@@ -13,9 +13,9 @@ import org.kodein.di.generic.singleton
 import org.kodein.di.ktor.KodeinFeature
 import ru.netology.model.PostModel
 import ru.netology.repository.PostRepository
-import ru.netology.repository.PostRepositoryInMemoryImpl
+import ru.netology.repository.PostRepositoryMutexImpl
 import ru.netology.route.v1
-import java.util.*
+import java.time.LocalDateTime
 
 fun main(args: Array<String>) {
     EngineMain.main(args)
@@ -44,7 +44,7 @@ fun Application.module(testing: Boolean = false) {
 
     install(KodeinFeature) {
         bind<PostRepository>() with singleton {
-            PostRepositoryInMemoryImpl().apply {
+            PostRepositoryMutexImpl().apply {
                 runBlocking {
                     repeat(10) {
                         save(
@@ -52,7 +52,7 @@ fun Application.module(testing: Boolean = false) {
                                 it,
                                 "author_$it",
                                 "test_$it",
-                                Date()
+                                LocalDateTime.of(2020, 7, 29, 11, 35, 0)
                             )
                         )
                     }
