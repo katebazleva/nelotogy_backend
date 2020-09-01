@@ -17,11 +17,22 @@ class PostRepositoryMutexImpl : PostRepository {
     private val mutex = Mutex()
 
     override suspend fun getAll(): List<PostModel> = mutex.withLock {
+        val newItems = items.map { it.copy(timesShown = it.timesShown + 1) }
+        items.clear()
+        items.addAll(newItems)
         items.reversed()
     }
 
     override suspend fun getById(id: Int): PostModel? = mutex.withLock {
-        items.find { it.id == id }?.also { it.timesShown++ }
+        when (val index = items.indexOfFirst { it.id == id }) {
+            -1 -> null
+            else -> {
+                val item = items[index]
+                val newItem = item.copy(timesShown = item.timesShown + 1)
+                items[index] = newItem
+                newItem
+            }
+        }
     }
 
     override suspend fun save(item: PostModel): PostModel = mutex.withLock {
@@ -49,8 +60,9 @@ class PostRepositoryMutexImpl : PostRepository {
             -1 -> null
             else -> {
                 val item = items[index]
-                item.likesCount++
-                item
+                val newItem = item.copy(likesCount = item.likesCount + 1)
+                items[index] = newItem
+                newItem
             }
         }
     }
@@ -60,8 +72,9 @@ class PostRepositoryMutexImpl : PostRepository {
             -1 -> null
             else -> {
                 val item = items[index]
-                if (item.likesCount > 0) item.likesCount--
-                item
+                val newItem = if (item.likesCount > 0) item.copy(likesCount = item.likesCount - 1) else item
+                items[index] = newItem
+                newItem
             }
         }
     }
