@@ -1,1 +1,1 @@
-web: build/install/SkyBackend/bin/SkyBackend
+web: ./build/install/SkyBackend/bin/SkyBackend
